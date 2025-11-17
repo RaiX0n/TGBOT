@@ -1,4 +1,5 @@
 import logging
+import random
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
@@ -128,7 +129,7 @@ class AdvancedBot:
             [InlineKeyboardButton("🔔 Уведомления", callback_data="notifications"),
              InlineKeyboardButton("🌐 Язык", callback_data="language")],
             [InlineKeyboardButton("🎨 Тема", callback_data="theme"),
-             InlineKeyboardButton("📱 Приложение", web_app=WebAppInfo(url="https://raix0n.github.io/TGBOT/"))]
+             InlineKeyboardButton("📱 Приложение", web_app=WebAppInfo(url=f"https://raix0n.github.io/TGBOT/?v={random.randint(1,10000)}"))]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
